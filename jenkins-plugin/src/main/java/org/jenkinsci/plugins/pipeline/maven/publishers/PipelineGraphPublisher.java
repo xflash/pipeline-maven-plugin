@@ -49,6 +49,8 @@ public class PipelineGraphPublisher extends MavenPublisher {
 
     private boolean includeScopeProvided = true;
 
+    private boolean includeScopeImport = true;
+
     private boolean skipDownstreamTriggers;
 
     /**
@@ -74,6 +76,8 @@ public class PipelineGraphPublisher extends MavenPublisher {
             includedScopes.add("provided");
         if (includeScopeTest)
             includedScopes.add("test");
+        if (includeScopeImport)
+            includedScopes.add("import");
         return includedScopes;
     }
 
